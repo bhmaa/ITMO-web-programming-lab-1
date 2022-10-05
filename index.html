@@ -2,77 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>web-programming-lab#1</title>
-    <script src="validator.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>web-lab-1</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/load_previous.js"></script>
 </head>
 <body>
     <table id="elements-table">
         <tr>
-            <td colspan="3" id="header">
-                <span>
-                    <h1>student: starikova daria</h1>
-                </span>
-                <span>
-                    <h2>group: p32312</h2>
-                    <h2>var: 3217</h2>
-                </span>
+            <td colspan="2" id="header">
+                <h1>student: starikova daria</h1>
+                <h2>group: p32312<br>var: 3217</h2>
             </td>
         </tr>
 
         <tr>
-            <td id="left_column">
-                <img src="assets/images/areas.png">
+            <td id="graph_column">
+                <canvas id="graphic" width="400px" height="400px"></canvas>
+                <script src="js/graphics.js"></script>
             </td>
 
-            <td id="center_column">
-                <form class="js-form" action="server.php" method="POST">
-                    <div class="group">
+            <td id="form_column">
+                <form class="js-form">
+                    <div id="radio_group" class="group">
                         <p>choose the value of x</p>
-                        <input name="x" type="radio" value="-2">
-                        <label for="x">-2</label><br>
-                        <input name="x" type="radio" value="-1.5">
-                        <label for="x">-1.5</label><br>
-                        <input name="x" type="radio" value="-1">
-                        <label for="x">-1</label><br>
-                        <input name="x" type="radio" value="-0.5">
-                        <label for="x">-0.5</label><br>
-                        <input name="x" type="radio" value="0">
-                        <label for="x">0</label><br>
-                        <input name="x" type="radio" value="0.5">
-                        <label for="x">0.5</label><br>
-                        <input name="x" type="radio" value="1">
-                        <label for="x">1</label><br>
-                        <input name="x" type="radio" value="1.5">
-                        <label for="x">1.5</label><br>
-                        <input name="x" type="radio" value="2">
-                        <label for="x">2</label><br>
+                        <input id="x=-2" name="x" type="radio" value="-2">
+                        <label for="x=-2">-2</label><br>
+                        <input id="x=-1.5" name="x" type="radio" value="-1.5">
+                        <label for="x=-1.5">-1.5</label><br>
+                        <input id="x=-1" name="x" type="radio" value="-1">
+                        <label for="x=-1">-1</label><br>
+                        <input id="x=-0.5" name="x" type="radio" value="-0.5">
+                        <label for="x=-0.5">-0.5</label><br>
+                        <input id="x=0" name="x" type="radio" value="0">
+                        <label for="x=0">0</label><br>
+                        <input id="x=0.5" name="x" type="radio" value="0.5">
+                        <label for="x=0.5">0.5</label><br>
+                        <input id="x=1" name="x" type="radio" value="1">
+                        <label for="x=1">1</label><br>
+                        <input id="x=1.5" name="x" type="radio" value="1.5">
+                        <label for="x=1.5">1.5</label><br>
+                        <input id="x=2" name="x" type="radio" value="2">
+                        <label for="x=2">2</label><br>
                     </div>
 
                     <div class="group">                   
-                        <p>enter the value of y</p>
-                        <input name="y" type="text" placeholder="type a number between -5 and 3" class="y" onkeypress="textValidate()"><br>
+                        <label for="y">enter the value of y</label><br>
+                        <input id="y" name="y" type="text" placeholder="type a number between -5 and 3" class="y"><br>
                     </div>
 
                     <div class="group">    
-                        <p>enter the value of r</p>
-                        <input name="r" type="text" placeholder="type a number between 2 and 5" class="r" onkeypress="textValidate()"><br>
+                        <label for="r">enter the value of r</label><br>
+                        <input id="r" name="r" type="text" placeholder="type a number between 2 and 5" class="r"><br>
                     </div>    
 
                     <input type="submit" value="check point" onclick="validate()">
                 </form>
             </td>
-
-            <td id="right_column">
+        </tr>
+        <tr>
+            <td colspan="2" id="results_column">
                 <table class="results">
-                    <tr>
-                        <th>x value</th>
-                        <th>y value</th>
-                        <th>r value</th>
-                        <th>result</th>
-                        <th>attempt time</th>
-                        <th>processing time</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>x value</th>
+                            <th>y value</th>
+                            <th>r value</th>
+                            <th>result</th>
+                            <th>attempt time</th>
+                            <th>processing time</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
                 </table>
             </td>
         </tr>
