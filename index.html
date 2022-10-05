@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>web-programming-lab#1</title>
+    <script src="validator.js"></script>
+</head>
+<body>
+    <table id="elements-table">
+        <tr>
+            <td colspan="3" id="header">
+                <span>
+                    <h1>student: starikova daria</h1>
+                </span>
+                <span>
+                    <h2>group: p32312</h2>
+                    <h2>var: 3217</h2>
+                </span>
+            </td>
+        </tr>
+
+        <tr>
+            <td id="left_column">
+                <img src="assets/images/areas.png">
+            </td>
+
+            <td id="center_column">
+                <form class="js-form" action="server.php" method="POST">
+                    <div class="group">
+                        <p>choose the value of x</p>
+                        <input name="x" type="radio" value="-2">
+                        <label for="x">-2</label><br>
+                        <input name="x" type="radio" value="-1.5">
+                        <label for="x">-1.5</label><br>
+                        <input name="x" type="radio" value="-1">
+                        <label for="x">-1</label><br>
+                        <input name="x" type="radio" value="-0.5">
+                        <label for="x">-0.5</label><br>
+                        <input name="x" type="radio" value="0">
+                        <label for="x">0</label><br>
+                        <input name="x" type="radio" value="0.5">
+                        <label for="x">0.5</label><br>
+                        <input name="x" type="radio" value="1">
+                        <label for="x">1</label><br>
+                        <input name="x" type="radio" value="1.5">
+                        <label for="x">1.5</label><br>
+                        <input name="x" type="radio" value="2">
+                        <label for="x">2</label><br>
+                    </div>
+
+                    <div class="group">                   
+                        <p>enter the value of y</p>
+                        <input name="y" type="text" placeholder="type a number between -5 and 3" class="y" onkeypress="textValidate()"><br>
+                    </div>
+
+                    <div class="group">    
+                        <p>enter the value of r</p>
+                        <input name="r" type="text" placeholder="type a number between 2 and 5" class="r" onkeypress="textValidate()"><br>
+                    </div>    
+
+                    <input type="submit" value="check point" onclick="validate()">
+                </form>
+            </td>
+
+            <td id="right_column">
+                <table class="results">
+                    <tr>
+                        <th>x value</th>
+                        <th>y value</th>
+                        <th>r value</th>
+                        <th>result</th>
+                        <th>attempt time</th>
+                        <th>processing time</th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
