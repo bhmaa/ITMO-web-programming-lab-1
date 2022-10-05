@@ -17,9 +17,9 @@ function check($x, $y, $r)
     if(!isset($_SESSION['data'])) {
         $_SESSION['data'] = array();
     }
-    $xValue = floatval($_POST['x']);
-    $yValue = floatval($_POST['y']);
-    $rValue = floatval($_POST['r']);
+    $xValue = $_POST['x'];
+    $yValue = $_POST['y'];
+    $rValue = $_POST['r'];
     $timezoneOffset = $_POST['timezone'];
 
     $currentTime = date('H:i:s', time() - $timezoneOffset * 60);

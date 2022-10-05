@@ -36,7 +36,7 @@ function validate() {
 
     if (sending) {
       $.ajax({
-        url: 'server.php',
+        url: './php/server.php',
         method: "POST",
         dataType: "html",
         data: {

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-        url: 'load_data.php',
+        url: './php/load_data.php',
         method: "POST",
         success: function (data) {
             console.log(data);
