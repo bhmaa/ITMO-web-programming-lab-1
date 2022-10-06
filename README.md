@@ -1,4 +1,4 @@
-# web-1-lab
+# ITMO-web-programming-lab-1
 
 You can check it [here](https://se.ifmo.ru/~s336770/index.html)
 
