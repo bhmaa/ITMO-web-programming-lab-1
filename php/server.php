@@ -27,7 +27,7 @@ function check($x, $y, $r)
     $result = check($xValue, $yValue, $rValue);
     $text_result = $result ? 'hit' : 'miss';
 
-    $executionTime = round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 7);
+    $executionTime = round((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']) * 1000, 3);
 
     $answer = array("x"=>$xValue, "y"=>$yValue, "r"=>$rValue, "result"=>$text_result, "current_time"=>$currentTime,
         "execution_time"=>$executionTime);
