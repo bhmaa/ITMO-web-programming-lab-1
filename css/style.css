@@ -114,3 +114,14 @@ input[type="submit"] {
     margin: 15px;
     text-align: left;
 }
+
+#reset_table {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: gray;
+    border: none;
+    color: black;
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 12px;
+}

@@ -47,12 +47,12 @@
                         <label for="x=2">2</label><br>
                     </div>
 
-                    <div class="group">                   
+                    <div id="y-group" class="group">
                         <label for="y">enter the value of y</label><br>
                         <input id="y" name="y" type="text" placeholder="type a number between -5 and 3" class="y"><br>
                     </div>
 
-                    <div class="group">    
+                    <div id="r-group" class="group">
                         <label for="r">enter the value of r</label><br>
                         <input id="r" name="r" type="text" placeholder="type a number between 2 and 5" class="r"><br>
                     </div>    
@@ -63,6 +63,8 @@
         </tr>
         <tr>
             <td colspan="2" id="results_column">
+                <button id="reset_table">reset table</button><br>
+                <script src="js/reset.js"></script>
                 <table class="results">
                     <thead>
                         <tr>

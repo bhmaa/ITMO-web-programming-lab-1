@@ -25,13 +25,33 @@ function validate() {
       y.classList.add('error');
       sending = false;
     } else {
-      y.classList.remove('error');
+      if (y.value.length > 12) {
+        let err = document.createElement('div');
+        err.className = 'text-error';
+        err.style.color = 'red';
+        err.innerHTML = 'no longer than 12 symbols';
+        document.getElementById('y-group').after(err);
+        sending = false;
+      }
+      else {
+        y.classList.remove('error');
+      }
     }
     if (!r.value || isNaN(r.value) || r.value < 2 || r.value > 5) {
       r.classList.add('error');
       sending = false;
     } else {
-      r.classList.remove('error');
+      if (r.value.length > 12) {
+        let err = document.createElement('div');
+        err.className = 'text-error';
+        err.style.color = 'red';
+        err.innerHTML = 'no longer than 12 symbols';
+        document.getElementById('r-group').after(err);
+        sending = false;
+      }
+      else {
+        r.classList.remove('error');
+      }
     }
 
     if (sending) {
