@@ -1,7 +1,6 @@
 <?php
 
-function check($x, $y, $r)
-{
+function check($x, $y, $r) {
     if ($x <= 0 && $y <= 0) {
         return $y >= -0.5 * $x - $r / 2 && $x >= -1 * $r;
     } elseif ($x >= 0 && $y >= 0) {
@@ -13,10 +12,6 @@ function check($x, $y, $r)
     }
 }
 
-    session_start();
-    if(!isset($_SESSION['data'])) {
-        $_SESSION['data'] = array();
-    }
     $xValue = $_POST['x'];
     $yValue = $_POST['y'];
     $rValue = $_POST['r'];
@@ -25,14 +20,9 @@ function check($x, $y, $r)
     $currentTime = date('H:i:s', time() - $timezoneOffset * 60);
 
     $result = check($xValue, $yValue, $rValue);
-    $text_result = $result ? 'hit' : 'miss';
+    $text_result = $result ? 'HIT' : 'MISS';
 
     $executionTime = round((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']) * 1000, 3);
-
-    $answer = array("x"=>$xValue, "y"=>$yValue, "r"=>$rValue, "result"=>$text_result, "current_time"=>$currentTime,
-        "execution_time"=>$executionTime);
-
-    $_SESSION['data'][] = $answer;
 
     echo "<tr>";
     echo "<td>" . $xValue. "</td>";
