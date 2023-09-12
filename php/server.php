@@ -1,5 +1,18 @@
 <?php
 
+function isDataValid($x, $y, $r) {
+    if (!($x == -2 || $x == -1.5 || $x == -1 || $x == -0.5 || $x == 0 || $x == 0.5 || $x == 1 || $x == 1.5 || $x == 2)) {
+        return false;
+    }
+    if (is_nan($y) || $y < -5 || $y > 3 || strlen($y) > 12) {
+        return false;
+    }
+    if (is_nan($r) || $r < 2 || $r > 5 || strlen($r) > 12) {
+        return false;
+    }
+    return true;
+}
+
 function check($x, $y, $r) {
     if ($x <= 0 && $y <= 0) {
         return $y >= -0.5 * $x - $r / 2 && $x >= -1 * $r;
@@ -19,16 +32,20 @@ function check($x, $y, $r) {
 
     $currentTime = date('H:i:s', time() - $timezoneOffset * 60);
 
-    $result = check($xValue, $yValue, $rValue);
-    $text_result = $result ? 'HIT' : 'MISS';
-
-    $executionTime = round((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']) * 1000, 3);
-
     echo "<tr>";
-    echo "<td>" . $xValue. "</td>";
-    echo "<td>" . $yValue . "</td>";
-    echo "<td>" . $rValue . "</td>";
-    echo "<td>" . $text_result . "</td>";
-    echo "<td>" . $currentTime . "</td>";
-    echo "<td>" . $executionTime . "</td>";
+    if (isDataValid($xValue, $yValue, $rValue)) {
+        $result = check($xValue, $yValue, $rValue);
+        $text_result = $result ? 'HIT' : 'MISS';
+
+        $executionTime = round((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']) * 1000, 3);
+
+        echo "<td>" . $xValue . "</td>";
+        echo "<td>" . $yValue . "</td>";
+        echo "<td>" . $rValue . "</td>";
+        echo "<td>" . $text_result . "</td>";
+        echo "<td>" . $currentTime . "</td>";
+        echo "<td>" . $executionTime . "</td>";
+    } else {
+        echo "<td colspan=\"6\">" . "data is invalid" . "</td>";
+    }
     echo "</tr>";

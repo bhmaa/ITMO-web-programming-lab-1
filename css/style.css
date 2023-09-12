@@ -39,6 +39,7 @@
     width: 20%;
     padding: 10px 20px;
     color: var(--main-color);
+    vertical-align: top;
 }
 
 input[type=text] {
@@ -122,4 +123,18 @@ button:hover {
     width: 100%;
     border-collapse: collapse;
     color: var(--main-color);
+}
+
+#scroll_table {
+    max-height: 500px;
+    overflow-x: auto;
+}
+
+#scroll {
+    display: flex;
+}
+
+th {
+    position: sticky;
+    top: 0;
 }

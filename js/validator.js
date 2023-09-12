@@ -8,7 +8,9 @@ $(document).ready(function () {
         let sending = true;
         let x = document.querySelector('input[name="x"]:checked');
         let y = form.querySelector('.y');
+        let yValue = y.value.replace(',', '.');
         let r = form.querySelector('.r');
+        let rValue = r.value.replace(',', '.');
 
         if (x == null) {
             radio_group.classList.add('error');
@@ -17,14 +19,14 @@ $(document).ready(function () {
             radio_group.classList.remove('error');
         }
 
-        if (!y.value || isNaN(y.value) || y.value < -5 || y.value > 3 || y.value.length > 12) {
+        if (!yValue || isNaN(yValue) || yValue < -5 || yValue > 3 || yValue.length > 12) {
             y.classList.add('error');
             sending = false;
         } else {
             y.classList.remove('error');
         }
 
-        if (!r.value || isNaN(r.value) || r.value < 2 || r.value > 5 || r.value.length > 12) {
+        if (!rValue || isNaN(rValue) || rValue < 2 || rValue > 5 || rValue.length > 12) {
             r.classList.add('error');
             sending = false;
         } else {
@@ -38,8 +40,8 @@ $(document).ready(function () {
                 dataType: "html",
                 data: {
                     x: $('input[name="x"]:checked').val(),
-                    y: y.value,
-                    r: r.value,
+                    y: yValue,
+                    r: rValue,
                     timezone: new Date().getTimezoneOffset()
                 },
                 success: function (data) {

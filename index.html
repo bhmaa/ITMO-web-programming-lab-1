@@ -52,7 +52,7 @@
                             <span class="hint-text">y is a number in the range from -5 to 3, no longer than 12 characters</span>
                         </div>
                         <br>
-                        <input id="y" name="y" type="text" placeholder="-5...3" class="y">
+                        <input id="y" name="y" type="text" placeholder="-5...3" class="y" maxlength="12">
                     </div>
                     <br>
                     <div id="r-group" class="group">
@@ -60,7 +60,7 @@
                             <span class="hint-text">r is a number in the range from 2 to 5, no longer than 12 characters</span>
                         </div>
                         <br>
-                        <input id="r" name="r" type="text" placeholder="2...5" class="r">
+                        <input id="r" name="r" type="text" placeholder="2...5" class="r" maxlength="12">
                     </div>
                     <br>
                     <button id="check-button">check point</button>
@@ -69,20 +69,24 @@
             </div>
         </td>
         <td id="results_column">
-            <table class="results">
-                <thead>
-                <tr>
-                    <th>x value</th>
-                    <th>y value</th>
-                    <th>r value</th>
-                    <th>result</th>
-                    <th>attempt time</th>
-                    <th>processing time in milliseconds</th>
-                </tr>
-                </thead>
-                <tbody id="table_body">
-                </tbody>
-            </table>
+            <div id="scroll">
+                <div id="scroll_table">
+                    <table class="results">
+                        <thead>
+                        <tr>
+                            <th>x value</th>
+                            <th>y value</th>
+                            <th>r value</th>
+                            <th>result</th>
+                            <th>attempt time</th>
+                            <th>processing time in milliseconds</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table_body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </td>
     </tr>
 </table>
