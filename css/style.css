@@ -101,6 +101,7 @@ button:hover {
     padding: 5px 0;
     position: absolute;
     left: 105%;
+    z-index: 1;
 }
 
 .hint:hover .hint-text {
