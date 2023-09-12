@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <title>web-lab-1</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="js/validator.js"></script>
-    <script src="js/load_previous.js"></script>
+    <title>web lab №1</title>
+    <link rel="icon" href="img/favicon.png">
 </head>
 <body>
-    <table id="elements-table">
-        <tr>
-            <td colspan="2" id="header">
-                <h1>student: starikova daria</h1>
-                <h2>group: p32312<br>var: 3217</h2>
-            </td>
-        </tr>
-
-        <tr>
-            <td id="graph_column">
-                <canvas id="graphic" width="400px" height="400px"></canvas>
-                <script src="js/graphics.js"></script>
-            </td>
-
-            <td id="form_column">
+<table id="elements-table">
+    <tr>
+        <td colspan="3" id="student_info">
+            <h1>student: starikova daria</h1>
+            <h2>group: p3231</h2>
+            <h2>var: 3217</h2>
+        </td>
+    </tr>
+    <tr>
+        <td id="graph_column">
+            <canvas id="graphic" width="400px" height="400px"></canvas>
+        </td>
+        <td id="form_column">
+            <div id="form-with-buttons">
                 <form class="js-form">
                     <div id="radio_group" class="group">
-                        <p>choose the value of x</p>
+                        <div class="hint">choose the value of x
+                            <span class="hint-text">x must be selected</span>
+                        </div>
+                        <br>
                         <input id="x=-2" name="x" type="radio" value="-2">
                         <label for="x=-2">-2</label><br>
                         <input id="x=-1.5" name="x" type="radio" value="-1.5">
@@ -44,45 +44,51 @@
                         <input id="x=1.5" name="x" type="radio" value="1.5">
                         <label for="x=1.5">1.5</label><br>
                         <input id="x=2" name="x" type="radio" value="2">
-                        <label for="x=2">2</label><br>
+                        <label for="x=2">2</label>
                     </div>
-
+                    <br>
                     <div id="y-group" class="group">
-                        <label for="y">enter the value of y</label><br>
-                        <input id="y" name="y" type="text" placeholder="type a number between -5 and 3" class="y"><br>
+                        <div class="hint">enter the value of y
+                            <span class="hint-text">y is a number in the range from -5 to 3, no longer than 12 characters</span>
+                        </div>
+                        <br>
+                        <input id="y" name="y" type="text" placeholder="-5...3" class="y">
                     </div>
-
+                    <br>
                     <div id="r-group" class="group">
-                        <label for="r">enter the value of r</label><br>
-                        <input id="r" name="r" type="text" placeholder="type a number between 2 and 5" class="r"><br>
-                    </div>    
-
-                    <input type="submit" value="check point" onclick="validate()">
+                        <div class="hint">enter the value of r
+                            <span class="hint-text">r is a number in the range from 2 to 5, no longer than 12 characters</span>
+                        </div>
+                        <br>
+                        <input id="r" name="r" type="text" placeholder="2...5" class="r">
+                    </div>
+                    <br>
+                    <button id="check-button">check point</button>
                 </form>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" id="results_column">
-                <button id="reset_table">reset table</button><br>
-                <script src="js/reset.js"></script>
-                <table class="results">
-                    <thead>
-                        <tr>
-                            <th>x value</th>
-                            <th>y value</th>
-                            <th>r value</th>
-                            <th>result</th>
-                            <th>attempt time</th>
-                            <th>processing time in milliseconds</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </table>
+                <button id="clear-button">clear</button>
+            </div>
+        </td>
+        <td id="results_column">
+            <table class="results">
+                <thead>
+                <tr>
+                    <th>x value</th>
+                    <th>y value</th>
+                    <th>r value</th>
+                    <th>result</th>
+                    <th>attempt time</th>
+                    <th>processing time in milliseconds</th>
+                </tr>
+                </thead>
+                <tbody id="table_body">
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="js/graphics.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/clear.js"></script>
 </body>
 </html>
