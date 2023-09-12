@@ -116,7 +116,7 @@ button:hover {
 
 .results, .results th, .results td {
     text-align: center;
-    border: 3px solid;
+    border: 3px solid var(--main-color);
 }
 
 .results {
@@ -130,11 +130,9 @@ button:hover {
     overflow-x: auto;
 }
 
-#scroll {
-    display: flex;
-}
-
 th {
     position: sticky;
     top: 0;
+    color: var(--main-bg-color);
+    background-color: var(--main-color);
 }
